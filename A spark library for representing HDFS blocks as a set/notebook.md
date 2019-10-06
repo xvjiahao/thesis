@@ -27,8 +27,12 @@
   - **Massive-RRP: round-random partitioner for massive data**  <br><br>
     如果数据超出了有限的资源，使用大型的RRP组件解决方案就会比较方便，下图为大型RRP组件的实现步骤：<br>
     ![Fig2.Illustration of massive-RRP: it consists of two stages of randomization to generate the random sample data blocks.](https://ars.els-cdn.com/content/image/1-s2.0-S0167642319300942-gr002.jpg) <br></br>
-    ***Stage 1***
-   
+    ***Stage 1*** <br>
+    * 将文件分布存入d个文件夹里，用户可以规定d的值从而确定当前可用的资源数量，每一个文件夹包含 P/d 个块（P为文件数量，d是用户规定的文件夹数量），使用的是均等无替换的随机选择策略。<br>
+    * 在每个文件夹下通过应用RRP生成一个新的文件夹（包含P/d个文件），代表了随机样本数据块。<br><br>
+    ***Stage 2***
+    * 从上一步中得到的结果中重新进行分布生成以生成其他文件夹，每一个文件夹都有P/d个文件（从上一步结果文件夹中随机选择的，无替换）。<br>+ 在每一个文件夹上应用RRP策略生成新的文件夹（包含 Q/d 个文件，代表随机样本数据块）。<br>
+    * 最后，在一个文件夹目录下收集所有文件，形成一个包含Q个文件的数据集（每个文件都是整个数据的随机样本）。<br>
     
 
      

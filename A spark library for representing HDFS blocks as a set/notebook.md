@@ -26,8 +26,8 @@
     
   - **Massive-RRP: round-random partitioner for massive data**  <br><br>
     如果数据超出了有限的资源，使用大型的RRP组件解决方案就会比较方便，下图为大型RRP组件的实现步骤：<br>
-    ![Fig2.Illustration of massive-RRP: it consists of two stages of randomization to generate the random sample data blocks.](https://ars.els-cdn.com/content/image/1-s2.0-S0167642319300942-gr002.jpg) <br>
-   
+    ![Fig2.Illustration of massive-RRP: it consists of two stages of randomization to generate the random sample data blocks.](https://ars.els-cdn.com/content/image/1-s2.0-S0167642319300942-gr002.jpg) <br></br>
+    ***Stage 1***
    
     
 
